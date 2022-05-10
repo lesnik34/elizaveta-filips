@@ -1,0 +1,68 @@
+@import "@styles/variables.scss";
+
+.main {
+  padding-top: 67px;
+}
+
+.wrapper {
+  min-height: calc(100vh - 165px);
+
+  @media (min-width: $tablet-width) {
+    max-width: 390px;
+    margin: auto;
+  }
+}
+
+.image_wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.title {
+  font-size: 28px;
+  font-family: $special-font;
+  letter-spacing: -0.05em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.bio_wrapper {
+  margin-bottom: 30px;
+}
+
+.bio_title,
+.edu_title {
+  font-size: 28px;
+  font-family: $special-font;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+}
+
+.bio_desc,
+.edu_text {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  // text-align: center;
+  text-align: justify;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

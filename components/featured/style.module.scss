@@ -1,0 +1,30 @@
+@import "@styles/variables.scss";
+
+.main {
+  margin-top: 25px;
+}
+
+.title {
+  font-size: 28px;
+  font-family: $special-font;
+  letter-spacing: -0.05em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 25px;
+}
+
+.item {
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

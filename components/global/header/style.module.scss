@@ -1,0 +1,58 @@
+@import "@styles/variables.scss";
+
+.main {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+}
+
+.wrapper {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.visible {
+    & .logo {
+      opacity: 1;
+      display: block;
+    }
+
+    & .burger {
+      &::before {
+        background-color: $basic-black;
+      }
+
+      &::after {
+        background-color: $basic-black;
+      }
+    }
+
+    & .burger_line {
+      background-color: $basic-black;
+    }
+  }
+}
+
+.search {
+  margin-right: 15px;
+}
+
+.link {
+  display: block;
+  width: 154px;
+  height: 15px;
+  position: relative;
+}
+
+.logo {
+  object-fit: contain;
+  opacity: 0;
+  display: none;
+  transition: opacity 300ms ease-in-out 200ms;
+}
+
+.button_wrapper {
+  display: flex;
+  align-items: center;
+}

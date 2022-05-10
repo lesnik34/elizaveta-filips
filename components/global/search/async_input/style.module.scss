@@ -1,0 +1,71 @@
+@import "@styles/variables.scss";
+
+.main {
+  @media (min-width: $tablet-width) {
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+.input {
+  padding: 15px;
+  width: 100%;
+  border: none;
+  background-color: $tundora;
+  font-family: $default-font;
+  color: $basic-white;
+  border-radius: 0;
+  font-size: 18px;
+  outline: none;
+
+  &::placeholder {
+    color: $grey;
+    font-family: $default-font;
+  }
+}
+
+.message_info {
+  color: $tundora;
+  text-align: center;
+  margin-top: 15px;
+  display: block;
+  font-size: 18px;
+}
+
+.image_wrapper {
+  width: 90px;
+  height: 50px;
+  position: relative;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 10px;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $tundora;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  display: block;
+  max-width: calc(100% - 90px - 20px);
+  color: $basic-white;
+  margin-left: 20px;
+}

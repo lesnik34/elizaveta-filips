@@ -1,0 +1,110 @@
+@import "@styles/variables.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_icon {
+  width: 100%;
+  height: 100%;
+  fill: $basic-white;
+  transition: fill 300ms ease-in-out 200ms;
+}
+
+.search {
+  width: 17px;
+  height: 17px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    & svg {
+      fill: $tundora;
+      transition: fill 200ms ease-in-out;
+    }
+  }
+}
+
+.main.active {
+  & .search_icon {
+    fill: $basic-black;
+  }
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba($basic-black, 0.85);
+  opacity: 0;
+  overflow-y: scroll;
+
+  &.anim-exit-done {
+    opacity: 0;
+  }
+
+  &.anim-exit {
+    animation: fade-in 300ms alternate-reverse;
+  }
+
+  &.anim-enter-done {
+    opacity: 1;
+  }
+
+  &.anim-enter {
+    animation: fade-in 500ms forwards;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.close {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  background-color: transparent;
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transform: rotate(45deg);
+    width: 100%;
+    height: 3px;
+    background-color: $basic-white;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 3px;
+    background-color: $basic-white;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

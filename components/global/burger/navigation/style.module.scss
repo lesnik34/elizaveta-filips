@@ -1,0 +1,114 @@
+@import "@styles/variables.scss";
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 80px;
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+
+.item {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.anim-enter {
+    & .sub_list {
+      display: block;
+      animation: fade-in 500ms forwards;
+    }
+  }
+
+  &.anim-enter-done {
+    & .sub_list {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &.anim-exit {
+    & .sub_list {
+      animation: fade-in 500ms alternate-reverse;
+    }
+  }
+
+  &.anim-exit-done {
+    & .sub_list {
+      opacity: 0;
+      display: none;
+    }
+  }
+}
+
+.link {
+  color: $basic-white;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $tundora;
+  }
+}
+
+.button {
+  color: $basic-white;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
+  font-family: $default-font;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $tundora;
+  }
+}
+
+.sub_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 20px;
+  overflow: hidden;
+  transition: height 300ms ease-in-out;
+  display: none;
+}
+
+.sub_item {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sub_link {
+  color: $grey;
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $tundora;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

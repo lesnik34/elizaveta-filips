@@ -1,0 +1,29 @@
+@import "@styles/variables.scss";
+
+.wrapper {
+  padding-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 98px);
+}
+
+.title {
+  font-size: 85px;
+  font-family: $special-font;
+  margin: 0;
+}
+
+.link {
+  font-size: 20px;
+  padding: 12px 49px;
+  border: 1px solid $basic-black;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out,
+    border 300ms ease-in-out;
+
+  &:hover {
+    color: $basic-white;
+    background-color: $code-gray;
+    border: 1px solid $basic-black;
+  }
+}

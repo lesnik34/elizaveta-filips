@@ -1,0 +1,74 @@
+@import "@styles/variables.scss";
+
+.main {
+  padding-top: 67px;
+  min-height: calc(100vh - 98px);
+
+  @media (min-width: $tablet-width) {
+    padding-top: 30vh;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 100px;
+  }
+}
+
+.slider {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 50%;
+    margin: 0;
+    margin-right: 20px;
+  }
+}
+
+.info {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.info_title {
+  font-size: 15px;
+  font-family: $special-font;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 2px;
+  display: block;
+  color: $tundora;
+}
+
+.info_text {
+  margin: 0;
+  font-size: 20px;
+}
+
+.contact {
+  width: 100%;
+  font-size: 18px;
+  font-family: $default-font;
+  margin-top: 20px;
+  padding: 12px 49px;
+  color: $basic-black;
+  border: 1px solid $basic-black;
+  transition: background-color 300ms ease-in-out, border 300ms ease-in-out;
+  display: block;
+  text-align: center;
+
+  &:hover {
+    background-color: $code-gray;
+    border: 1px solid $code-gray;
+    color: $basic-white;
+  }
+}
+
+.content {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: center;
+  }
+}
