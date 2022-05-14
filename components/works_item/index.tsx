@@ -43,7 +43,7 @@ const WorksItem: React.FC<WorksItemI> = ({ painting }) => (
             <div className={styles.info}>
               <h2 className={styles.info_title}>Size</h2>
 
-              <p className={styles.info_text}>{painting.size}cm</p>
+              <p className={styles.info_text}>{painting.size}</p>
             </div>
 
             <div className={styles.info}>
