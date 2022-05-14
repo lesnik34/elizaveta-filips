@@ -8,6 +8,7 @@ import SearchComponent from "@components/global/search";
 import { headerSelector } from "@store/selectors/global";
 import Burger from "@components/global/burger";
 
+import LogoImage from "@/public/images/svg/logo.svg";
 import styles from "./style.module.scss";
 
 const Header = () => {
@@ -21,12 +22,7 @@ const Header = () => {
         >
           <Link href="/">
             <a className={styles.link}>
-              <Image
-                src="/images/svg/logo.svg"
-                alt="Logo"
-                layout="fill"
-                className={styles.logo}
-              />
+              <Image src={LogoImage} alt="Logo" className={styles.logo} />
             </a>
           </Link>
 

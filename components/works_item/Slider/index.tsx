@@ -23,6 +23,7 @@ const Slider: React.FC<SliderI> = ({ data }) => {
     setCurrentImage(0);
     setIsViewerOpen(false);
   };
+
   return (
     <div className={styles.main}>
       <Splide
