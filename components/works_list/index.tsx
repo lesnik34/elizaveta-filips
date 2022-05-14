@@ -29,7 +29,7 @@ const WorksList: React.FC<WorksListI> = ({ paintings }) => {
         loader={<span className={styles.loader}>Loading...</span>}
         className={styles.list}
       >
-        {paintings.map((el) => (
+        {items.map((el) => (
           <li key={el.id} className={styles.item}>
             <Item item={el} />
           </li>
