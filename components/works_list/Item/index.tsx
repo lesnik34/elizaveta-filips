@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { PaintingI } from "@api/types";
 
@@ -14,10 +15,11 @@ const Item: React.FC<ItemI> = ({ item }) => (
     <Link href={`/works/${item.category.slug}/${item.slug}`}>
       <a className={styles.link}>
         <div className={styles.background_wrapper}>
-          <img
+          <Image
             src={item.previewImage.url}
-            alt={item.title}
             className={styles.background}
+            layout="fill"
+            alt={item.title}
           />
         </div>
 
