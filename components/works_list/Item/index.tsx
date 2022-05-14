@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { PaintingI } from "@api/types";
+import shimmer64 from "@utils/shimmer64";
 
 import styles from "./style.module.scss";
 
@@ -19,6 +20,8 @@ const Item: React.FC<ItemI> = ({ item }) => (
             src={item.previewImage.url}
             className={styles.background}
             layout="fill"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${shimmer64("700", "475")}`}
             alt={item.title}
           />
         </div>

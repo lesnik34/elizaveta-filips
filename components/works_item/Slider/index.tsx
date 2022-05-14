@@ -3,6 +3,8 @@ import { Splide as SplideComponent, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
 import ImageViewer from "react-simple-image-viewer";
 
+import shimmer64 from "@/utils/shimmer64";
+
 import styles from "./style.module.scss";
 
 interface SliderI {
@@ -41,6 +43,11 @@ const Slider: React.FC<SliderI> = ({ data }) => {
                 src={el.url}
                 className={styles.image}
                 layout="fill"
+                placeholder="blur"
+                blurDataURL={`data:image/svg+xml;base64,${shimmer64(
+                  "700",
+                  "475"
+                )}`}
                 alt="Work photo"
                 onClick={() => openImageViewer(index)}
               />
