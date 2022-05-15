@@ -18,7 +18,7 @@ const Featured: React.FC<FeaturedI> = ({ paintings }) => {
     <section className={styles.main}>
       <div className="container">
         <div className={styles.wrapper}>
-          <h2 className={styles.title}>{n("featured.title")}</h2>
+          {/* <h2 className={styles.title}>{n("featured.title")}</h2> */}
 
           <ItemList paintings={paintings} />
         </div>
