@@ -38,8 +38,9 @@ const Bread: React.FC<BreadI> = ({ path }) => {
                 <meta itemProp="name" content={el.title} />
                 {el.title}
               </a>
-              <meta itemProp="position" content={`${i + 1}`} />
             </Link>
+
+            <meta itemProp="position" content={`${i + 1}`} />
           </li>
         );
       })}
