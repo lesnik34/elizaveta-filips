@@ -22,7 +22,7 @@ const CustomHead: React.FC<CustomHeadI> = ({
       </title>
       <link
         rel="canonical"
-        href={`https://elizavetafilips.com${router.asPath}`}
+        href={`https://elizavetafilips.com${router?.asPath || "/"}`}
       />
 
       <meta name="title" content={title} />
@@ -38,7 +38,7 @@ const CustomHead: React.FC<CustomHeadI> = ({
       <meta property="og:image" content={image} key="ogimage" />
       <meta
         property="og:url"
-        content={`https://elizavetafilips.com${router.asPath}`}
+        content={`https://elizavetafilips.com${router?.asPath || "/"}`}
         key="ogurl"
       />
       <meta property="og:description" content={description} key="ogdesc" />
