@@ -11,7 +11,7 @@ interface ErrorI {
 }
 
 const Error: React.FC<ErrorI> = ({ locale, categories }) => (
-  <Layout categories={categories} language={locale}>
+  <Layout categories={categories} language={locale} title="Not Found">
     <NotFound />
   </Layout>
 );

@@ -14,7 +14,11 @@ interface HomeI {
 }
 
 const Home: React.FC<HomeI> = ({ locale, featured, categories }) => (
-  <Layout categories={categories} language={locale}>
+  <Layout
+    categories={categories}
+    language={locale}
+    title="Elizaveta Filips | Home"
+  >
     <Hero />
 
     <Featured paintings={featured} />

@@ -1,8 +1,25 @@
 @import "@styles/variables.scss";
 
 .main {
+  padding-bottom: 20px;
+
   & :global(#ReactSimpleImageViewer) {
     z-index: 120;
+  }
+
+  & :global(.splide__pagination) {
+    bottom: 0px;
+  }
+
+  & :global(.splide__pagination__page) {
+    bottom: -20px;
+    width: 5px;
+    height: 5px;
+    background-color: $grey;
+
+    &:global(.is-active) {
+      background-color: $code-gray;
+    }
   }
 }
 
@@ -16,7 +33,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    height: 60vh;
+    height: 65vh;
   }
 }
 

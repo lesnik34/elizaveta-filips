@@ -11,7 +11,11 @@ interface ContactsI {
 }
 
 const Contacts: React.FC<ContactsI> = ({ locale, categories }) => (
-  <Layout categories={categories} language={locale}>
+  <Layout
+    categories={categories}
+    language={locale}
+    title="Elizaveta Filips | Contact"
+  >
     <ContactComponent />
   </Layout>
 );

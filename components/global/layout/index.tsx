@@ -11,12 +11,18 @@ import { setHeaderVision } from "@store/slices/global";
 
 interface LayoutI {
   children: JSX.Element | React.ReactNode;
+  title?: string;
+  description?: string;
+  image?: string;
   language: string;
   isHeaderVisible?: boolean;
   categories: { id: string; slug: string; title: string }[];
 }
 
 const Layout: React.FC<LayoutI> = ({
+  title,
+  description,
+  image,
   children,
   language,
   isHeaderVisible = false,
@@ -34,7 +40,7 @@ const Layout: React.FC<LayoutI> = ({
   return (
     <CategoriesProvider categories={categories}>
       <LanguageProvider language={language}>
-        <CustomHead />
+        <CustomHead title={title} description={description} image={image} />
 
         <Header />
 

@@ -31,14 +31,14 @@ const Slider: React.FC<SliderI> = ({ data }) => {
       <Splide
         options={{
           type: "fade",
-          pagination: false,
+          pagination: true,
           arrows: false,
           cover: true,
         }}
       >
         {data.map((el, index) => (
           <SplideSlide key={el.id}>
-            <div className={styles.image_wrapper}>
+            <div className={styles.image_wrapper} itemProp="image">
               <Image
                 src={el.url}
                 className={styles.image}

@@ -1,0 +1,44 @@
+@import "@styles/variables.scss";
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin-right: 10px;
+  padding-right: 10px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: $tundora;
+  }
+
+  &.active {
+    & .link {
+      color: $tundora;
+      cursor: default;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.link {
+  color: $grey;
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: $tundora;
+  }
+}
