@@ -3,20 +3,12 @@
 .main {
   padding-top: 67px;
   min-height: calc(100vh - 98px);
-
-  @media (min-width: $tablet-width) {
-    padding-top: 30vh;
-  }
-
-  @media (min-width: $desktop-width) {
-    padding-top: 15vh;
-  }
 }
 
 .slider {
   margin-bottom: 20px;
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     width: 50%;
     margin: 0;
     margin-right: 20px;
@@ -67,7 +59,7 @@
 }
 
 .content {
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     display: flex;
     justify-content: center;
   }

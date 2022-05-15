@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+import Bread from "@components/bread";
 import { PaintingI } from "@/api/types";
 
 import Slider from "./Slider";
@@ -13,8 +14,22 @@ interface WorksItemI {
 const WorksItem: React.FC<WorksItemI> = ({ painting }) => (
   <section className={styles.main}>
     <div className="container">
-      <div className={styles.wrapper}>
-        <h1 className="visually-hidden">{painting.title}</h1>
+      <div
+        className={styles.wrapper}
+        itemScope
+        itemType="http://schema.org/Product"
+      >
+        <Bread
+          path={[
+            { title: "Categories", slug: "works" },
+            painting.category,
+            { title: painting.title, slug: painting.slug },
+          ]}
+        />
+
+        <h1 className="visually-hidden" itemProp="name">
+          {painting.title}
+        </h1>
 
         <div className={styles.content}>
           <div className={styles.slider}>
@@ -27,29 +42,42 @@ const WorksItem: React.FC<WorksItemI> = ({ painting }) => (
             />
           </div>
 
-          <div className={styles.info_wrapper}>
+          <div
+            className={styles.info_wrapper}
+            itemProp="offers"
+            itemScope
+            itemType="http://schema.org/Offer"
+          >
             <div className={styles.info}>
               <h2 className={styles.info_title}>Title</h2>
 
-              <p className={styles.info_text}>{painting.title}</p>
+              <p className={styles.info_text} itemProp="name">
+                {painting.title}
+              </p>
             </div>
 
             <div className={styles.info}>
               <h2 className={styles.info_title}>Technique</h2>
 
-              <p className={styles.info_text}>{painting.technique}</p>
+              <p className={styles.info_text} itemProp="description">
+                {painting.technique}
+              </p>
             </div>
 
             <div className={styles.info}>
               <h2 className={styles.info_title}>Size</h2>
 
-              <p className={styles.info_text}>{painting.size}</p>
+              <p className={styles.info_text} itemProp="description">
+                {painting.size}
+              </p>
             </div>
 
             <div className={styles.info}>
               <h2 className={styles.info_title}>Year</h2>
 
-              <p className={styles.info_text}>{painting.year}</p>
+              <p className={styles.info_text} itemProp="description">
+                {painting.year}
+              </p>
             </div>
 
             <Link href="/contact">

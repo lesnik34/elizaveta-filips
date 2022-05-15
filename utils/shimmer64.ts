@@ -17,4 +17,6 @@ const toBase64 = (str: string) =>
     ? Buffer.from(str).toString("base64")
     : window.btoa(str);
 
-export default (w: string, h: string) => toBase64(shimmer(w, h));
+const shimmer64 = (w: string, h: string) => toBase64(shimmer(w, h));
+
+export default shimmer64;

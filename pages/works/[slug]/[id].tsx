@@ -17,7 +17,13 @@ const Painting: React.FC<PaintingPageI> = ({
   painting,
   categories,
 }) => (
-  <Layout categories={categories} language={locale}>
+  <Layout
+    categories={categories}
+    language={locale}
+    title={painting.title}
+    image={painting.previewImage.url}
+    description={`Size: ${painting.size}, Year: ${painting.year}, Technique: ${painting.technique}`}
+  >
     <WorksItem painting={painting} />
   </Layout>
 );

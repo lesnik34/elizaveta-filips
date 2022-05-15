@@ -19,7 +19,11 @@ const Category: React.FC<CategoryI> = ({
   category,
   categories,
 }) => (
-  <Layout categories={categories} language={locale}>
+  <Layout
+    categories={categories}
+    language={locale}
+    title={`Elizaveta Filips | ${category.title}`}
+  >
     <CategoriesPage paintings={paintings} category={category} />
   </Layout>
 );

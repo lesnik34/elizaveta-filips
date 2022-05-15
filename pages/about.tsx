@@ -11,7 +11,11 @@ interface AboutI {
 }
 
 const About: React.FC<AboutI> = ({ locale, categories }) => (
-  <Layout categories={categories} language={locale}>
+  <Layout
+    categories={categories}
+    language={locale}
+    title="Elizaveta Filips | About"
+  >
     <AboutComponent />
   </Layout>
 );
