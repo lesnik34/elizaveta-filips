@@ -31,6 +31,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: { locale: context.locale, featured: paintings, categories },
+    revalidate: 1,
   };
 };
 

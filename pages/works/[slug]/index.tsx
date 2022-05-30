@@ -34,6 +34,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const categories = await getCategories();
   const category = categories.find((el: { slug: string }) => el.slug === slug);
 
+  if (!category || !categories || !paintings) {
+    return {
+      redirect: {
+        permanent: true,
+        destination: "/404",
+      },
+    };
+  }
+
   return {
     props: { locale: context.locale, paintings, category, categories },
   };
@@ -47,7 +56,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
