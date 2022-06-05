@@ -33,9 +33,14 @@
 }
 
 .image_wrapper {
-  width: 90px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   position: relative;
+}
+
+.image {
+  object-fit: contain;
+  object-position: center;
 }
 
 .list {

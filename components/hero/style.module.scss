@@ -8,6 +8,14 @@
   justify-content: center;
 }
 
+.three {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .overlay {
   position: absolute;
   z-index: 1;
@@ -26,7 +34,7 @@
 .image_wrapper {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 250px;
   right: 0;
   bottom: 0;
   z-index: 0;
@@ -39,12 +47,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 35vh;
+  margin-top: 30vh;
   opacity: 0;
   transition: opacity 600ms ease-in-out;
 
   &.visible {
     opacity: 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 40vh;
   }
 }
 
@@ -52,7 +64,7 @@
   margin: 0;
   text-transform: uppercase;
   font-family: $special-font;
-  font-size: 36px;
+  font-size: 30px;
   width: 235px;
   color: $basic-white;
   text-align: center;
@@ -69,7 +81,8 @@
   padding: 12px 49px;
   color: $basic-white;
   border: 1px solid $basic-white;
-  transition: background-color 300ms ease-in-out, border 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, border 300ms ease-in-out,
+    color 300ms ease-in-out;
 
   &:hover {
     background-color: $code-gray;
@@ -78,6 +91,6 @@
 }
 
 .background {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
