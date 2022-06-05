@@ -19,7 +19,7 @@ const CategoriesPage: React.FC<CategoriesPageI> = ({ paintings, category }) => (
 
         <h2 className={styles.title}>{category.title}</h2>
 
-        <ItemList paintings={paintings} />
+        <ItemList isSmall={category.slug === "canvas"} paintings={paintings} />
       </div>
     </div>
   </section>

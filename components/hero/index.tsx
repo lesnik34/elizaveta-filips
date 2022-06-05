@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
-import Image from "next/image";
 import cls from "classnames";
 import { useInView } from "react-intersection-observer";
 
 import useTranslation from "@hooks/translation";
 import { setHeaderVision } from "@store/slices/global";
 
+import Three from "./three";
 import lng from "./language.json";
 import styles from "./style.module.scss";
 
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className={styles.wrapper}>
           <h1 className="visually-hidden">Elizaveta filips art</h1>
 
-          <div className={styles.image_wrapper}>
+          {/* <div className={styles.image_wrapper}>
             <Image
               src="/images/jpg/hero.jpg"
               alt="Main background"
@@ -35,6 +35,10 @@ const Hero = () => {
             />
 
             <div className={styles.overlay} />
+          </div> */}
+
+          <div className={styles.three}>
+            <Three />
           </div>
 
           <div
@@ -43,7 +47,7 @@ const Hero = () => {
             })}
             ref={ref}
           >
-            <span className={styles.title}>Elizaveta Philips</span>
+            <span className={styles.title}>Elizaveta Filips</span>
 
             <Link href="/works">
               <a className={styles.link}>{n("button.works")}</a>

@@ -48,7 +48,7 @@
   color: $basic-white;
   display: block;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   transition: color 200ms ease-in-out;
 
   &:hover {
@@ -60,7 +60,7 @@
   color: $basic-white;
   display: block;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   border: none;
   background-color: transparent;
   font-family: $default-font;
@@ -78,7 +78,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-top: 20px;
+  padding-top: 10px;
   overflow: hidden;
   transition: height 300ms ease-in-out;
   display: none;
@@ -96,7 +96,7 @@
   color: $grey;
   display: block;
   text-align: center;
-  font-size: 25px;
+  font-size: 17px;
   transition: color 200ms ease-in-out;
 
   &:hover {

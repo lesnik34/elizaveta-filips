@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cls from "classnames";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { PaintingI } from "@api/types";
@@ -8,11 +9,12 @@ import styles from "./style.module.scss";
 
 interface WorksListI {
   paintings: PaintingI[];
+  isSmall?: boolean;
 }
 
 const MAX_ITEMS = 10;
 
-const WorksList: React.FC<WorksListI> = ({ paintings }) => {
+const WorksList: React.FC<WorksListI> = ({ paintings, isSmall = false }) => {
   const [items, setItems] = useState(paintings.slice(0, MAX_ITEMS));
 
   const addItems = () => {
@@ -27,12 +29,12 @@ const WorksList: React.FC<WorksListI> = ({ paintings }) => {
         next={addItems}
         hasMore={paintings.length !== items.length}
         loader={<span className={styles.loader}>Loading...</span>}
-        className={styles.list}
+        className={cls(styles.list, { [styles.small]: isSmall })}
       >
         {items.map((el) => (
-          <li key={el.id} className={styles.item}>
-            <Item item={el} />
-          </li>
+          <div className={styles.item}>
+            <Item isSmall={isSmall} item={el} />
+          </div>
         ))}
       </InfiniteScroll>
     </div>

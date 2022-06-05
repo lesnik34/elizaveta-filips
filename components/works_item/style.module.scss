@@ -2,11 +2,12 @@
 
 .main {
   padding-top: 67px;
+  padding-bottom: 20px;
   min-height: calc(100vh - 98px);
 }
 
 .slider {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 
   @media (min-width: $desktop-width) {
     width: 50%;
@@ -15,8 +16,31 @@
   }
 }
 
+.info_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .info {
-  margin-bottom: 15px;
+  &.info_name {
+    margin-bottom: 30px;
+    font-weight: 600;
+
+    & .info_text {
+      font-size: 14px;
+      font-family: $extra-font;
+      font-style: italic;
+      max-width: 80%;
+    }
+  }
+
+  &.info_year {
+    margin-right: 20px;
+    text-align: end;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -25,31 +49,39 @@
 
 .info_title {
   font-size: 15px;
-  font-family: $special-font;
+  font-family: $extra-font;
   letter-spacing: -0.05em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   margin: 0;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
   display: block;
   color: $tundora;
 }
 
 .info_text {
   margin: 0;
-  font-size: 20px;
+  font-family: $extra-font;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
 }
 
 .contact {
   width: 100%;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 600;
   font-family: $default-font;
-  margin-top: 20px;
-  padding: 12px 49px;
-  color: $basic-black;
+  padding: 10px 49px;
+  color: rgba($basic-black, 0.7);
   border: 1px solid $basic-black;
   transition: background-color 300ms ease-in-out, border 300ms ease-in-out;
   display: block;
   text-align: center;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-transform: lowercase;
 
   &:hover {
     background-color: $code-gray;
@@ -61,6 +93,5 @@
 .content {
   @media (min-width: $desktop-width) {
     display: flex;
-    justify-content: center;
   }
 }
