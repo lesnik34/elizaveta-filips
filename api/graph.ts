@@ -105,3 +105,17 @@ export const getDataBySlug = async (data: string) => {
 
   return paintings[0];
 };
+
+export const getPreviews = async () => {
+  const { previews } = await graphcms.request(
+    `{
+      previews(stage: PUBLISHED) {
+        id,
+        url,
+        image { url }
+      }
+    }`
+  );
+
+  return previews;
+};

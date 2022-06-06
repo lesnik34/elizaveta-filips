@@ -1,11 +1,13 @@
 @import "@styles/variables.scss";
 
 .main {
-  min-width: 100vw;
-  min-height: 100vh;
   position: relative;
-  display: flex;
-  justify-content: center;
+  padding-bottom: 150px;
+  padding-top: 1px;
+}
+
+.preview {
+  margin-top: calc(100vh + 50px);
 }
 
 .three {
@@ -42,22 +44,28 @@
 }
 
 .title_wrapper {
-  position: relative;
+  position: absolute;
+  top: 30vh;
+  left: auto;
+  right: auto;
+  width: 236px;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 30vh;
   opacity: 0;
   transition: opacity 600ms ease-in-out;
+  left: calc(50% - 118px);
 
   &.visible {
     opacity: 1;
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 40vh;
+    width: 500px;
+    left: calc(50% - 250px);
+    top: 40vh;
   }
 }
 
@@ -66,15 +74,10 @@
   text-transform: uppercase;
   font-family: $special-font;
   font-size: 30px;
-  width: 235px;
   color: $basic-white;
   text-align: center;
   margin-bottom: 19px;
   letter-spacing: -0.03em;
-
-  @media (min-width: $desktop-width) {
-    width: auto;
-  }
 }
 
 .link {

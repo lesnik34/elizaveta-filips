@@ -1,7 +1,7 @@
 @import "@styles/variables.scss";
 
 .main {
-  padding-top: 67px;
+  padding-top: 90px;
 }
 
 .wrapper {
@@ -53,16 +53,33 @@
   display: block;
 }
 
-.bio_desc,
-.edu_text {
-  font-size: 18px;
+.content {
+  max-width: 260px;
+  font-size: 13px;
   margin: 0;
   padding: 0;
-  margin-bottom: 10px;
-  // text-align: center;
-  text-align: justify;
+  font-family: $extra-font;
+  margin: auto;
 
-  &:last-child {
-    margin-bottom: 0;
+  @media (min-width: $desktop-width) {
+    max-width: 600px;
   }
+}
+
+.desc {
+  text-align: justify;
+}
+
+.author_wrapper {
+  margin-top: 50px;
+}
+
+.author,
+.date,
+.city {
+  margin: 0;
+  font-size: 13px;
+  max-width: 200px;
+  font-family: $extra-font;
+  text-transform: uppercase;
 }
