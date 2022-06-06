@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import * as THREE from "three";
-import { LayerMaterial, Depth, Noise } from "lamina";
+import { LayerMaterial, Depth } from "lamina";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Cloud } from "@react-three/drei";
 
@@ -11,7 +11,6 @@ const Three = () => {
         <boxGeometry args={[1, 1, 1]} />
         <LayerMaterial side={THREE.BackSide}>
           <Depth
-            // colorA="#171514"
             colorA="#f66b2a"
             colorB="skyblue"
             alpha={1}
@@ -21,7 +20,7 @@ const Three = () => {
             origin={[100, 100, -100]}
           />
 
-          <Noise
+          {/* <Noise
             mapping="local"
             type="white"
             scale={1000}
@@ -29,7 +28,7 @@ const Three = () => {
             colorB="black"
             mode="subtract"
             alpha={0.2}
-          />
+          /> */}
         </LayerMaterial>
       </mesh>
     );
