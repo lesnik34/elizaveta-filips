@@ -57,16 +57,8 @@ const Three = () => {
           opacity={0.5}
           speed={0.4} // Rotation speed
           width={10} // Width of the full cloud
-          depth={0.001} // Z-dir depth
-          segments={10} // Number of particles
-        />
-
-        <Cloud
-          opacity={0.5}
-          speed={0.5} // Rotation speed
-          width={10} // Width of the full cloud
-          depth={0.001} // Z-dir depth
-          segments={10} // Number of particles
+          depth={0.1} // Z-dir depth
+          segments={20} // Number of particles
         />
       </Suspense>
 
