@@ -3,34 +3,32 @@ import type { GetStaticProps } from "next";
 
 import Hero from "@components/hero";
 import Layout from "@/components/global/layout";
-import Featured from "@components/featured";
-import { getCategories, getFeatured } from "@api/graph";
-import { PaintingI } from "@api/types";
+import { getCategories, getFeatured, getPreviews } from "@api/graph";
+import { PreviewI } from "@api/types";
 
 interface HomeI {
   locale: string;
-  featured: PaintingI[];
+  preview: PreviewI[];
   categories: { id: string; slug: string; title: string }[];
 }
 
-const Home: React.FC<HomeI> = ({ locale, featured, categories }) => (
+const Home: React.FC<HomeI> = ({ locale, preview, categories }) => (
   <Layout
     categories={categories}
     language={locale}
     title="Elizaveta Filips | Home"
   >
-    <Hero />
-
-    <Featured paintings={featured} />
+    <Hero preview={preview} />
   </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const paintings = await getFeatured();
   const categories = await getCategories();
+  const preview = await getPreviews();
 
   return {
-    props: { locale: context.locale, featured: paintings, categories },
+    props: { locale: context.locale, featured: paintings, preview, categories },
     revalidate: 1,
   };
 };

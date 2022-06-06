@@ -6,36 +6,34 @@ import { useInView } from "react-intersection-observer";
 
 import useTranslation from "@hooks/translation";
 import { setHeaderVision } from "@store/slices/global";
+import { PreviewI } from "@/api/types";
 
 import Three from "./three";
 import lng from "./language.json";
 import styles from "./style.module.scss";
+import Preview from "../preview";
 
-const Hero = () => {
+interface HeroI {
+  preview: PreviewI[];
+}
+
+const Hero: React.FC<HeroI> = ({ preview }) => {
   const n = useTranslation(lng as any);
   const dispatch = useDispatch();
   const { ref, inView } = useInView({ rootMargin: "-100px" });
 
   useEffect(() => {
-    dispatch(setHeaderVision(!inView));
-  }, [inView]);
+    dispatch(setHeaderVision(false));
+    return () => {
+      dispatch(setHeaderVision(true));
+    };
+  }, []);
 
   return (
     <section className={styles.main}>
       <div className="container">
         <div className={styles.wrapper}>
           <h1 className="visually-hidden">Elizaveta filips art</h1>
-
-          {/* <div className={styles.image_wrapper}>
-            <Image
-              src="/images/jpg/hero.jpg"
-              alt="Main background"
-              layout="fill"
-              className={styles.background}
-            />
-
-            <div className={styles.overlay} />
-          </div> */}
 
           <div className={styles.three}>
             <Three />
@@ -52,6 +50,10 @@ const Hero = () => {
             <Link href="/works">
               <a className={styles.link}>{n("button.works")}</a>
             </Link>
+          </div>
+
+          <div className={styles.preview}>
+            <Preview preview={preview} />
           </div>
         </div>
       </div>

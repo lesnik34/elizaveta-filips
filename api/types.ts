@@ -15,3 +15,11 @@ export interface PaintingI {
     url: string;
   }[];
 }
+
+export interface PreviewI {
+  id: string;
+  url: string;
+  image: {
+    url: string;
+  };
+}
