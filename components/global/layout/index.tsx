@@ -8,6 +8,7 @@ import CustomHead from "@components/global/custom_head";
 import LanguageProvider from "@context/language";
 import CategoriesProvider from "@context/categories";
 import { setHeaderVision } from "@store/slices/global";
+import GoogleTagManager from "@/components/gtm";
 
 interface LayoutI {
   children: JSX.Element | React.ReactNode;
@@ -41,6 +42,8 @@ const Layout: React.FC<LayoutI> = ({
     <CategoriesProvider categories={categories}>
       <LanguageProvider language={language}>
         <CustomHead title={title} description={description} image={image} />
+
+        <GoogleTagManager />
 
         <Header />
 
