@@ -4,7 +4,7 @@ import TagManager from "react-gtm-module";
 const GoogleTagManager = () => {
   useEffect(() => {
     TagManager.initialize({
-      gtmId: "GTM-WMDBVNB",
+      gtmId: "GTM-P73TGLG",
     });
   }, []);
 
