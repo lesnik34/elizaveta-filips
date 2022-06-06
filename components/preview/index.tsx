@@ -18,40 +18,38 @@ const Preview: React.FC<PreviewComponentI> = ({ preview }) => {
 
   return (
     <div className={styles.main}>
-      <div className="container">
-        <div className={styles.wrapper}>
-          <Splide
-            options={{
-              type: "loop",
-              perPage: device.isMobileWidth ? 1 : 1,
-              gap: 20,
-              speed: 700,
-              autoplay: true,
-              interval: 7000,
-              pauseOnFocus: true,
-              pauseOnHover: true,
-              pagination: false,
-              arrows: false,
-            }}
-          >
-            {preview.map((el) => (
-              <SplideSlide key={el.id}>
-                <Link href={el.url}>
-                  <a className={styles.link}>
-                    <div className={styles.image_wrapper} itemProp="image">
-                      <Image
-                        src={el.image.url}
-                        className={styles.image}
-                        layout="fill"
-                        alt="Work photo"
-                      />
-                    </div>
-                  </a>
-                </Link>
-              </SplideSlide>
-            ))}
-          </Splide>
-        </div>
+      <div className={styles.wrapper}>
+        <Splide
+          options={{
+            type: "loop",
+            perPage: device.isMobileWidth ? 1 : 1,
+            gap: 20,
+            speed: 700,
+            autoplay: true,
+            interval: 7000,
+            pauseOnFocus: true,
+            pauseOnHover: true,
+            pagination: false,
+            arrows: false,
+          }}
+        >
+          {preview.map((el) => (
+            <SplideSlide key={el.id}>
+              <Link href={el.url}>
+                <a className={styles.link}>
+                  <div className={styles.image_wrapper} itemProp="image">
+                    <Image
+                      src={el.image.url}
+                      className={styles.image}
+                      layout="fill"
+                      alt="Work photo"
+                    />
+                  </div>
+                </a>
+              </Link>
+            </SplideSlide>
+          ))}
+        </Splide>
       </div>
     </div>
   );
