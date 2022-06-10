@@ -24,6 +24,8 @@
 
   &.small {
     grid-template-columns: 1fr;
+    gap: 200px;
+    margin-bottom: 100px;
   }
 
   @media (min-width: $tablet-width) {
@@ -33,6 +35,8 @@
 
     &.small {
       grid-template-columns: 1fr;
+      gap: 25px;
+      margin-bottom: 20px;
     }
   }
 
