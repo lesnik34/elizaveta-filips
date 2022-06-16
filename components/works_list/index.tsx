@@ -32,7 +32,7 @@ const WorksList: React.FC<WorksListI> = ({ paintings, isSmall = false }) => {
         className={cls(styles.list, { [styles.small]: isSmall })}
       >
         {items.map((el) => (
-          <div className={styles.item}>
+          <div key={el.id} className={styles.item}>
             <Item isSmall={isSmall} item={el} />
           </div>
         ))}
