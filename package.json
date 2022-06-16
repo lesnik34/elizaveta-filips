@@ -6,7 +6,7 @@
     "start:dev": "cross-env ENV_MODE=development next dev",
     "start:stubs": "npm-run-all --parallel stub start:dev",
     "start:build": "cross-env ENV_MODE=production next start",
-    "start:prod": "npm-run-all start:build start:server",
+    "start:prod": "npm-run-all --parallel start:build start:server",
     "start:server": "node server.js",
     "stub": "node ./stub/index.js",
     "postbuild": "next-sitemap",
