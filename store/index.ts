@@ -8,7 +8,7 @@ export const store = configureStore({
     app: appReducer,
     global: globalReducer,
   },
-  devTools: true,
+  devTools: process.env.NODE_ENV === "development",
 });
 
 export type TStoreState = ReturnType<typeof store.getState>;
