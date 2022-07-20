@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cls from "classnames";
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -16,6 +16,10 @@ const MAX_ITEMS = 10;
 
 const WorksList: React.FC<WorksListI> = ({ paintings, isSmall = false }) => {
   const [items, setItems] = useState(paintings.slice(0, MAX_ITEMS));
+
+  useEffect(() => {
+    setItems(paintings.slice(0, MAX_ITEMS));
+  }, [paintings]);
 
   const addItems = () => {
     const newItems = paintings.slice(items.length, items.length + MAX_ITEMS);
